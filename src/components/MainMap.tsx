@@ -4,17 +4,20 @@ import L from "leaflet";
 import { MapContainer, TileLayer, Popup, GeoJSON } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "../app.scss";
-
-import { seychellesPolygons } from "../data/seychellesPolygons";
-import { ecuadorPolygons } from "../data/ecuadorPolygons";
-import { croatiaPolygons } from "../data/croatiaPolygons";
+import TopoJSON from "./TopoJSON";
+import azeData from '../../polygons-data/croatiaA1.json'
+import croatiaData from '../../polygons-data/aze.json'
+import palestinaData from '../../polygons-data/palestina.json'
+// import { seychellesPolygons } from "../data/seychellesPolygons";
+// import { ecuadorPolygons } from "../data/ecuadorPolygons";
+// import { croatiaPolygons } from "../data/croatiaPolygons";
 
 export const MainMap: FC<any> = ({ isDarkTheme }) => {
-  const dbbase = [
-    seychellesPolygons,
-    ecuadorPolygons,
-    croatiaPolygons
-  ] as any;
+  // const dbbase = [
+  //   seychellesPolygons,
+  //   ecuadorPolygons,
+  //   croatiaPolygons
+  // ] as any;
 
   type activeCitiesType = {
     position: string;
@@ -26,6 +29,10 @@ export const MainMap: FC<any> = ({ isDarkTheme }) => {
   const handleCityClick = (city: any) => {
     setActiveCity(city);
   };
+
+  // const CroatiaData = topojson.feature(croatiaData, croatiaData.objects).features;
+  // console.log(CroatiaData);
+  // console.log(topojson)
 
   return (
     <div className="mainmap__wrapper">
@@ -49,10 +56,21 @@ export const MainMap: FC<any> = ({ isDarkTheme }) => {
           // prod
           // <TileLayer url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png" />
         )}
-        {dbbase.map((_: any, idx: number) => (
-          <GeoJSON
-            key={idx}
-            data={dbbase[idx]}
+        {/* {dbbase.map((_: any, idx: number) => (
+
+        ))} */}
+<TopoJSON data={croatiaData}/>
+<TopoJSON data={azeData}/>
+<TopoJSON data={palestinaData}             style={() => ({
+              color: "red",
+              weight: 2,
+              opacity: 1,
+              fillOpacity: 0.3,
+            })}/>
+
+{/* <GeoJSON
+            // key={idx}
+            data={croatiaData}
             style={(feature) => ({
               color: "red",
               weight: 2,
@@ -62,8 +80,7 @@ export const MainMap: FC<any> = ({ isDarkTheme }) => {
             onEachFeature={(feature, layer) => {
               layer.on("click", handleCityClick);
             }}
-          />
-        ))}
+          /> */}
         {activeCity && (
           // @ts-ignore
           <Popup position={activeCity.position}>
