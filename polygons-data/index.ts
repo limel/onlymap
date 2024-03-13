@@ -6,10 +6,10 @@
  import antiguaAndBarbuda from './atg.json';
  import argentina from './arg.json';
  import armenia from './arm.json';
- import australia from './auss.json';
+//  import australia from './auss.json';
  import austria from './aut.json';
  import anatarctica from './ata.json';
- import azerbaijan from './aze.json';
+//  import azerbaijan from './aze.json';
 
  const data = [
   afganistan,
@@ -21,8 +21,8 @@
   antiguaAndBarbuda,
   argentina,
   armenia,
-  australia,
+  // australia,
   austria,
-  azerbaijan,
+  // azerbaijan,
 ]
 export default data;
