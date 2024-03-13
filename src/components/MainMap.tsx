@@ -1,38 +1,13 @@
-import { FC, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import L from "leaflet";
-import { MapContainer, TileLayer, Popup, GeoJSON } from "react-leaflet";
+import { FC, } from "react";
+import { MapContainer, TileLayer, } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import data from '../../polygons-data/'
 import "../app.scss";
 import TopoJSON from "./TopoJSON";
-import azeData from '../../polygons-data/croatiaA1.json'
-import croatiaData from '../../polygons-data/aze.json'
-import palestinaData from '../../polygons-data/palestina.json'
-// import { seychellesPolygons } from "../data/seychellesPolygons";
-// import { ecuadorPolygons } from "../data/ecuadorPolygons";
-// import { croatiaPolygons } from "../data/croatiaPolygons";
+import { GeoJSON } from "react-leaflet";
 
 export const MainMap: FC<any> = ({ isDarkTheme }) => {
-  // const dbbase = [
-  //   seychellesPolygons,
-  //   ecuadorPolygons,
-  //   croatiaPolygons
-  // ] as any;
-
-  type activeCitiesType = {
-    position: string;
-    name: string;
-    population: string;
-  };
-  const [activeCity, setActiveCity] = useState<activeCitiesType | null>(null);
-
-  const handleCityClick = (city: any) => {
-    setActiveCity(city);
-  };
-
-  // const CroatiaData = topojson.feature(croatiaData, croatiaData.objects).features;
-  // console.log(CroatiaData);
-  // console.log(topojson)
+  const dbbase = [] as any;
 
   return (
     <div className="mainmap__wrapper">
@@ -41,7 +16,7 @@ export const MainMap: FC<any> = ({ isDarkTheme }) => {
         minZoom={window.innerWidth <= 768 ? 2 : 3}
         zoom={3}
         maxZoom={18}
-        maxBounds={L.latLngBounds(L.latLng(-90, -170), L.latLng(90, 190))}
+        // maxBounds={L.latLngBounds(L.latLng(-90, -170), L.latLng(90, 190))}
         maxBoundsViscosity={1}
         className="mainmap"
       >
@@ -56,32 +31,12 @@ export const MainMap: FC<any> = ({ isDarkTheme }) => {
           // prod
           // <TileLayer url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png" />
         )}
-        {/* {dbbase.map((_: any, idx: number) => (
 
-        ))} */}
-<TopoJSON data={croatiaData}/>
-<TopoJSON data={azeData}/>
-<TopoJSON data={palestinaData}             style={() => ({
-              color: "red",
-              weight: 2,
-              opacity: 1,
-              fillOpacity: 0.3,
-            })}/>
+        {data.map((polygonsData: any, index: number) => (
+          <GeoJSON key={index} data={polygonsData} />
+        ))}
 
-{/* <GeoJSON
-            // key={idx}
-            data={croatiaData}
-            style={(feature) => ({
-              color: "red",
-              weight: 2,
-              opacity: 1,
-              fillOpacity: 0.3,
-            })}
-            onEachFeature={(feature, layer) => {
-              layer.on("click", handleCityClick);
-            }}
-          /> */}
-        {activeCity && (
+        {/* {activeCity && (
           // @ts-ignore
           <Popup position={activeCity.position}>
             <div>
@@ -90,7 +45,7 @@ export const MainMap: FC<any> = ({ isDarkTheme }) => {
               <p>Население: {activeCity.population}</p>
             </div>
           </Popup>
-        )}
+        )} */}
       </MapContainer>
     </div>
   );

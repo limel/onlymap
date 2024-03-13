@@ -1,12 +1,12 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { GeoJSON } from "react-leaflet";
 import * as topojson from "topojson-client";
 
-export default function TopoJSON(props) {
+export default function TopoJSON(props: any) {
   const layerRef = useRef(null);
   const { data, ...otherProps } = props;
 
-  function addData(layer, jsonData) {
+  function addData(layer: any, jsonData: any) {
     if (jsonData.type === "Topology") {
       for (let key in jsonData.objects) {
         let geojson = topojson.feature(jsonData, jsonData.objects[key]);
@@ -17,7 +17,7 @@ export default function TopoJSON(props) {
     }
   }
 
-  function onEachFeature(feature, layer) {
+  function onEachFeature(feature: any, layer: any) {
     if (feature.properties) {
       const { VARNAME_3, NAME_0 } = feature.properties;
       layer.bindPopup(`${VARNAME_3}, ${NAME_0}`);
@@ -30,6 +30,11 @@ export default function TopoJSON(props) {
   }, [props.data]);
 
   return (
-    <GeoJSON ref={layerRef} {...otherProps}  onEachFeature={onEachFeature} />
+    <GeoJSON ref={layerRef} {...otherProps}  style={() => ({
+      color: "red",
+      weight: 2,
+      opacity: 1,
+      fillOpacity: 0.3,
+    })} onEachFeature={onEachFeature} />
   );
 }
