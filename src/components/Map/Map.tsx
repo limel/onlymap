@@ -44,12 +44,6 @@ function Map({ geoData }: { geoData?: any }) {
 
       if (geoData) {
         L.geoJSON(geoData, {
-          style: {
-            color: '#7d2626',
-            weight: 2,
-            fillColor: '#7537373d',
-            fillOpacity: 1,
-          },
           onEachFeature: onEachFeature,
         }).addTo(map)
       }
