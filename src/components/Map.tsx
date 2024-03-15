@@ -3,6 +3,7 @@ import L, { Control, Map as LeafletMap, tileLayer } from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import type { HTMLProps } from 'react'
 import { useCallback, useEffect, useState } from 'react'
+import geoData from '../../polygons-data/ausss.json'
 
 export type ControlledLayer = {
   addLayer(layer: Layer): void
@@ -27,12 +28,12 @@ function createLeafletContext(map: LeafletMap): LeafletContextInterface {
 type DivProps = HTMLProps<HTMLDivElement>
 
 export interface MapContainerProps extends MapOptions, DivProps {
-  geoData?: any
+  // geoData?: any
   bounds?: LatLngBoundsExpression
 }
 
 export function Map({
-  geoData,
+  // geoData,
   center = [0, 0],
   zoom = 3,
   bounds,
@@ -43,7 +44,7 @@ export function Map({
   console.log(context)
   const mapRef = useCallback((node: HTMLDivElement | null) => {
     if (node !== null && context === null) {
-      const map = new LeafletMap(node, { preferCanvas: true, maxBounds, maxBoundsViscosity: 1.0, ...options })
+      const map = new LeafletMap(node, { maxBounds, maxBoundsViscosity: 1.0, ...options })
 
       tileLayer('http://mt0.google.com/vt/lyrs=s,h&hl=en&x={x}&y={y}&z={z}&s=Ga', {
         // attribution: '',

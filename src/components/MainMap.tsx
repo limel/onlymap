@@ -2,7 +2,7 @@ import { FC } from 'react'
 // import { MapContainer, TileLayer, } from "react-leaflet";
 import 'leaflet/dist/leaflet.css'
 import { Map } from './Map'
-import data from '../../polygons-data/'
+// import data from '../../polygons-data/'
 import '../app.scss'
 
 // import TopoJSON from "./TopoJSON";
@@ -12,7 +12,7 @@ import '../app.scss'
 export const MainMap: FC<any> = ({ isDarkTheme }) => {
   return (
     <div className="mainmap__wrapper">
-      <Map geoData={data ?? []} />
+      <Map />
       {/* <MapContainer
         center={[49.0238, 11.2292]}
         minZoom={window.innerWidth <= 768 ? 2 : 3}
