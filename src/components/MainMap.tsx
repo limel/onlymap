@@ -1,19 +1,18 @@
-import { FC, } from "react";
+import { FC } from 'react'
 // import { MapContainer, TileLayer, } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
-import { Map } from "./Map";
-// import data from '../../polygons-data/'
-import "../app.scss";
+import 'leaflet/dist/leaflet.css'
+import { Map } from './Map'
+import data from '../../polygons-data/'
+import '../app.scss'
 
 // import TopoJSON from "./TopoJSON";
 // import {Overlay, BaseLayer} from 'leaflet'
 // import { GeoJSON, Pane, BaseLayer, Overlay } from "react-leaflet";
 
 export const MainMap: FC<any> = ({ isDarkTheme }) => {
-
   return (
     <div className="mainmap__wrapper">
-      <Map />
+      <Map geoData={data ?? []} />
       {/* <MapContainer
         center={[49.0238, 11.2292]}
         minZoom={window.innerWidth <= 768 ? 2 : 3}
@@ -23,8 +22,8 @@ export const MainMap: FC<any> = ({ isDarkTheme }) => {
         maxBoundsViscosity={1}
         className="mainmap"
       > */}
-        {/* main */}
-        {/* {isDarkTheme ? (
+      {/* main */}
+      {/* {isDarkTheme ? (
           <TileLayer url="https://map1.vis.earthdata.nasa.gov/wmts-webmerc/VIIRS_CityLights_2012/default//GoogleMapsCompatible_Level8/{z}/{y}/{x}.jpg" />
         ) : (
           // main
@@ -39,7 +38,7 @@ export const MainMap: FC<any> = ({ isDarkTheme }) => {
           <GeoJSON key={index} data={polygonsData} />
         ))} */}
 
-        {/* {activeCity && (
+      {/* {activeCity && (
           // @ts-ignore
           <Popup position={activeCity.position}>
             <div>
@@ -50,7 +49,7 @@ export const MainMap: FC<any> = ({ isDarkTheme }) => {
           </Popup>
         )} */}
 
-{/* <MapContainer> 
+      {/* <MapContainer> 
     <BaseLayer preferCanvas={true} />
     <Pane name = "alwaysOnTop" style={{zIndex:400}}>
         <Overlay preferCanvas={false} />
@@ -59,5 +58,5 @@ export const MainMap: FC<any> = ({ isDarkTheme }) => {
 
       {/* </MapContainer> */}
     </div>
-  );
-};
+  )
+}
