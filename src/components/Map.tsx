@@ -44,7 +44,7 @@ export function Map({
   console.log(context)
   const mapRef = useCallback((node: HTMLDivElement | null) => {
     if (node !== null && context === null) {
-      const map = new LeafletMap(node, { maxBounds, maxBoundsViscosity: 1.0, ...options })
+      const map = new LeafletMap(node, { maxBounds, preferCanvas: true, maxBoundsViscosity: 1.0, ...options })
 
       tileLayer('http://mt0.google.com/vt/lyrs=s,h&hl=en&x={x}&y={y}&z={z}&s=Ga', {
         // attribution: '',
