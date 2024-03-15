@@ -1,4 +1,5 @@
 import bahamas from './bahamasSimple.json'
+import arm from './arm.json'
 import bahrania from './bahrania.json'
 import bangladesh from './bangladesh.json'
 import barbados from './barbados.json'
@@ -18,6 +19,7 @@ import burundi from './burundi.json'
 
 // need refactoring for type geoJsonData
 const data: any[] = [
+  arm,
   bahamas,
   bahrania,
   bangladesh,
