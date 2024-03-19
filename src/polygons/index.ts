@@ -45,13 +45,13 @@ const data: any[] = [
   cyprus,
   czech,
   congo,
-  denmark,
-  djibouti,
-  dominica,
-  dominicanRepublic,
-  esatTrimor,
-  ecuador,
-  egypt,
+  // denmark,
+  // djibouti,
+  // dominica,
+  // dominicanRepublic,
+  // esatTrimor,
+  // ecuador,
+  // egypt,
 ]
 
 export default data
