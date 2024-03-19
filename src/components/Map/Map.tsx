@@ -37,9 +37,7 @@ function Map({ geoData }: { geoData?: any }) {
       tileLayer('http://mt0.google.com/vt/lyrs=s,h&hl=en&x={x}&y={y}&z={z}&s=Ga', tileLayerOptions).addTo(map)
 
       function onEachFeature(feature: any, layer: any) {
-        if (feature.properties && feature.properties.shapeName) {
-          layer.bindPopup(feature.properties.name)
-        }
+        layer.bindPopup(`<div>Количество делений: ${feature.geometries.length}</div>`)
       }
 
       if (geoData) {
