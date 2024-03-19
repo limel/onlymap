@@ -38,7 +38,7 @@ function Map({ geoData }: { geoData?: any }) {
 
       function onEachFeature(feature: any, layer: any) {
         if (feature.properties && feature.properties.shapeName) {
-          layer.bindPopup(feature.properties.shapeName)
+          layer.bindPopup(feature.properties.name)
         }
       }
 
