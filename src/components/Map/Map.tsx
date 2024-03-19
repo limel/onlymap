@@ -11,7 +11,7 @@ function createLeafletContext(map: LeafletMap): LeafletContextInterface {
   return Object.freeze({ __version: CONTEXT_VERSION, map })
 }
 // need refactoring for geoData type
-function Map({ geoData, geoDataOld }: { geoData?: any; geoDataOld?: any }) {
+function Map({ geoData }: { geoData?: any }) {
   const [center, setCenter] = useState([0, 0]) // default center of the map and use hook for probable future changes
 
   const mapOptions = {
@@ -45,16 +45,6 @@ function Map({ geoData, geoDataOld }: { geoData?: any; geoDataOld?: any }) {
       if (geoData) {
         L.geoJSON(geoData, {
           onEachFeature: onEachFeature,
-        }).addTo(map)
-      }
-      if (geoDataOld) {
-        L.geoJSON(geoDataOld, {
-          onEachFeature: onEachFeature,
-          style: {
-            color: '#ff000081',
-            fillColor: 'red',
-            opacity: 0.4,
-          },
         }).addTo(map)
       }
       map.setView(mapOptions.center || [0, 0], mapOptions.zoom)

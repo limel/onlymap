@@ -11,6 +11,7 @@ import comoros from './comors.json'
 import costaRica from './costa-rica.json'
 import cuba from './cuba.json'
 import cyprus from './cyprus.json'
+import croatia from './croatia.json'
 import czech from './czech.json'
 import congo from './congo.json'
 import denmark from './denmark.json'
@@ -35,6 +36,7 @@ const data: any[] = [
   caf,
   chad,
   chilie,
+  croatia,
   china,
   colombia,
   comoros,
