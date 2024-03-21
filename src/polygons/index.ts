@@ -1,7 +1,5 @@
-import arm from './arm.json'
-import cambodia from './cambodia.json'
-import cameroon from './cameroon.json'
-import capeVerde from './cape-verde.json'
+import serbia from './serbia.json'
+import bosnia from './bosnia.json'
 // import caf from './central-african-republic.json'
 import caf from './caf.json'
 import djibouti from './djibouti.json'
@@ -23,6 +21,8 @@ import finland from './finland.json'
 const data: any[] = [
   caf,
   dominica,
+  serbia,
+  bosnia,
   dominicanRepublic,
   djibouti,
   esatTrimor,
