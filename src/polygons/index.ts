@@ -1,6 +1,8 @@
+import armenia from './armenia.json'
+import aze from './aze.json'
+
 import serbia from './serbia.json'
 import bosnia from './bosnia.json'
-// import caf from './central-african-republic.json'
 import caf from './caf.json'
 import djibouti from './djibouti.json'
 import dominica from './dominica.json'
@@ -19,7 +21,8 @@ import finland from './finland.json'
 
 // need refactoring for type geoJsonData
 const data: any[] = [
-  caf,
+  armenia,
+  aze,
   dominica,
   serbia,
   bosnia,

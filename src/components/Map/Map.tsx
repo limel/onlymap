@@ -38,7 +38,8 @@ function Map({ geoData }: { geoData?: any }) {
 
       geoData.map((data: any) => {
         const countOfShape = data.features.length
-        L.geoJSON(data, {}).bindPopup(`<div>Количество делений: ${countOfShape}</div>`).addTo(map)
+        // L.geoJSON(data, {}).bindPopup(`<div>Количество делений: ${countOfShape}</div>`).addTo(map)
+        L.geoJSON(data, {}).addTo(map)
       })
       map.setView(mapOptions.center || [0, 0], mapOptions.zoom)
       setContext(createLeafletContext(map))
