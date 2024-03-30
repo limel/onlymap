@@ -8,6 +8,10 @@ import dominicanRepublic from './dominican-republic.json'
 import timorLeste from './timor-leste.json'
 import ecuador from './ecuador.json'
 import ethiopia from './ethiopia.json'
+import gabon from './gabon.json'
+import gambia from './gambia.json'
+import georgia from './georgia.json'
+import germany from './germany.json'
 import ghana from './ghana.json'
 import grenada from './grenada.json'
 import guatemala from './guatemala.json'
@@ -20,13 +24,10 @@ import india from './india.json'
 // need refactoring for type geoJsonData
 const data: any[] = [
   armenia,
-  // aze,
-  djibouti,
-  dominica,
-  dominicanRepublic,
-  timorLeste,
-  ecuador,
-  ethiopia,
+  gabon,
+  gambia,
+  georgia,
+  germany,
   ghana,
   grenada,
   guatemala,
