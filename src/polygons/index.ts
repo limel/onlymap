@@ -19,7 +19,7 @@ import guyana from './guyana.json'
 import haiti from './haiti.json'
 import hungary from './hungary.json'
 import iceland from './iceland.json'
-import india from './india.json'
+// import india from './india.json'
 
 // need refactoring for type geoJsonData
 const data: any[] = [
@@ -35,7 +35,7 @@ const data: any[] = [
   haiti,
   hungary,
   iceland,
-  india,
+  // india,
 ]
 
 export default data
