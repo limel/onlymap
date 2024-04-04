@@ -1,43 +1,11 @@
-import armenia from './armenia.json'
-import aze from './aze.json'
-//
-
-import djibouti from './djibouti.json'
-import dominica from './dominica.json'
-import dominicanRepublic from './dominican-republic.json'
-import timorLeste from './timor-leste.json'
-import ecuador from './ecuador.json'
-import ethiopia from './ethiopia.json'
-import gabon from './gabon.json'
-import gambia from './gambia.json'
-import georgia from './georgia.json'
-import germany from './germany.json'
-import ghana from './ghana.json'
-import grenada from './grenada.json'
 import guatemala from './guatemala.json'
 import guinea from './guinea.json'
-import guyana from './guyana.json'
-import haiti from './haiti.json'
-import hungary from './hungary.json'
 import iceland from './iceland.json'
-// import india from './india.json'
+import guineaBissau from './guinea-bissau.json'
+import iran from './iran.json'
+import iraq from './iraq.json'
+import israel from './israel.json'
 
-// need refactoring for type geoJsonData
-const data: any[] = [
-  // armenia,
-  gabon,
-  gambia,
-  georgia,
-  guinea,
-  // germany,
-  // ghana,
-  // grenada,
-  guatemala,
-  // guyana,
-  // haiti,
-  // hungary,
-  // iceland,
-  // india,
-]
+const data: any[] = [guatemala, guinea, guineaBissau, iceland, iran, iraq, israel]
 
 export default data
