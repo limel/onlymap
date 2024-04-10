@@ -12,11 +12,15 @@
 // import jordan from './jordan.json'
 // import aze from './aze.json'
 // import armenia from './armenia.json'
-import kuwait from './kuwait.json'
-import kazakhstan from './kazakhstan.json'
-import kyrgyzstan from './kyrgyzstan.json'
-import kosovo from './kosovo.json'
+// import kuwait from './kuwait.json'
+// import kazakhstan from './kazakhstan.json'
+// import kyrgyzstan from './kyrgyzstan.json'
+// import kosovo from './kosovo.json'
+import laos from './laos.json'
+import latvia from './latvia.json'
+import lesotho from './lesotho.json'
+import lebanon from './lebanon.json'
 
-const data: any[] = [kuwait, kazakhstan, kyrgyzstan, kosovo]
+const data: any[] = [laos, latvia, lesotho, lebanon]
 
 export default data
