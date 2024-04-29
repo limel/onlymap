@@ -1,6 +1,7 @@
 // import guatemala from './guatemala.json'
 // import guinea from './guinea.json'
 // import iceland from './iceland.json'
+import gabon from './gabon.json'
 // import guineaBissau from './guinea-bissau.json'
 // import iran from './iran.json'
 // import iraq from './iraq.json'
@@ -21,6 +22,6 @@ import latvia from './latvia.json'
 import lesotho from './lesotho.json'
 import lebanon from './lebanon.json'
 
-const data: any[] = [laos, latvia, lesotho, lebanon]
+const data: any[] = [laos, latvia, lesotho, lebanon, gabon]
 
 export default data
